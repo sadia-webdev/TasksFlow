@@ -60,6 +60,10 @@ export const authOptions: NextAuthOptions = {
       if (token?.id && session.user) session.user.id = token.id as string;
       return session;
     },
+
+    async redirect({ url, baseUrl }) {
+      return `${baseUrl}/dashboard`;
+    },
   },
 
   secret: process.env.NEXTAUTH_SECRET,
