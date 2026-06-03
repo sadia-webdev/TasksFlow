@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TasksFlow
+
+A full-stack task management app built with Next.js 16, TypeScript, and MongoDB.
+
+🔗 **Live Demo:** https://tasksflow-three.vercel.app
+
+## Features
+
+- Authentication with Google OAuth and email/password via NextAuth.js
+- Create, edit, and delete tasks
+- Filter tasks by status (All, To Do, In Progress, Done)
+- Protected routes — unauthenticated users are redirected to login
+- Skeleton loading UI while tasks fetch
+- Fully responsive layout
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Database | MongoDB + Mongoose |
+| Auth | NextAuth.js (Google + Credentials) |
+| Deployment | Vercel + MongoDB Atlas |
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/sadia-webdev/TasksFlow.git
+cd TasksFlow
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Set up environment variables
+
+Create a `.env.local` file in the root:
+
+MONGODB_URI=your_mongodb_connection_string
+NEXTAUTH_SECRET=your_nextauth_secret
+NEXTAUTH_URL=http://localhost:3000
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+
+---
+### 4. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+app/
+├── api/
+│   ├── auth/        # NextAuth route handler
+│   └── models/      # Mongoose models (Task, User)
+├── dashboard/       # Protected dashboard pages
+│   ├── components/  # Sidebar, TaskList, TaskSkeleton, Menu
+│   └── tasks/       # Tasks page + edit task page
+├── form/            # Server actions (createTask, updateTask, deleteTask)
+├── lib/             # Database connection
+├── login/           # Login page
+├── register/        # Register page
+└── types/           # TypeScript types
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Deployed on **Vercel** with **MongoDB Atlas** as the database.
 
-## Deploy on Vercel
+To deploy your own:
+1. Push to GitHub
+2. Import the repo on [Vercel](https://vercel.com)
+3. Add all environment variables in Vercel project settings
+4. Add your Vercel URL to Google OAuth authorized redirect URIs
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built by [Sadia](https://github.com/sadia-webdev)
