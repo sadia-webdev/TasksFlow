@@ -43,13 +43,14 @@ npm install
 
 Create a `.env.local` file in the root:
 
+```
 MONGODB_URI=your_mongodb_connection_string
 NEXTAUTH_SECRET=your_nextauth_secret
 NEXTAUTH_URL=http://localhost:3000
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
 
----
 ### 4. Run the development server
 
 ```bash
@@ -60,6 +61,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
 
+```
 app/
 ├── api/
 │   ├── auth/        # NextAuth route handler
@@ -72,9 +74,7 @@ app/
 ├── login/           # Login page
 ├── register/        # Register page
 └── types/           # TypeScript types
-
-
----
+```
 
 ## Deployment
 
