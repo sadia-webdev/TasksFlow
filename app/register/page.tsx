@@ -24,16 +24,12 @@ export default function RegisterPage() {
 
     if (state.success) {
       toast.success(state.message);
-
-       setTimeout(() => {
-        router.push("/dashboard");
-      }, 1200); 
+      setTimeout(() => {
+        router.push("/login");
+      }, 1200);
     } else {
       toast.error(state.message);
-    } 
-
-    
-
+    }
   }, [state, router]);
 
   return (

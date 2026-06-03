@@ -42,6 +42,7 @@ export async function register(
     const hashedPassword = await bcryptjs.hash(password, 10);
     await User.create({ name, email, password: hashedPassword });
 
+    
     return { message: "Successfully registered", success: true };
   } catch (error: unknown) {
     console.error("Registration Error:", error);
