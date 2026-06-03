@@ -1,5 +1,9 @@
 # TasksFlow
 
+![TasksFlow Dashboard](./public/image.png)
+
+
+
 A full-stack task management app built with Next.js 16, TypeScript, and MongoDB.
 
 🔗 **Live Demo:** https://tasksflow-three.vercel.app
