@@ -1,7 +1,7 @@
 # TasksFlow
 
-![TasksFlow Dashboard](./public/image.png)
 
+![TasksFlow Dashboard](https://github.com/user-attachments/assets/4b95fd54-455d-41ab-90b8-525dd3ff6644)
 
 
 A full-stack task management app built with Next.js 16, TypeScript, and MongoDB.
